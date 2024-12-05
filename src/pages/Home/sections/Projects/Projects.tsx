@@ -4,32 +4,20 @@ const projects = [
   {
     title: "Portfolio Website",
     description: "A single-page React portfolio showcasing my skills and projects.",
-    link: "#",
+    repoLink: "https://github.com/vkaraujo/portfolio",
+    liveLink: "#",
   },
   {
     title: "TMDB API App",
-    description: "A movie and TV series listing app built with TypeScript and TMDB API.",
-    link: "#",
+    description: "A movie and TV series listing app built with React and TMDB API.",
+    repoLink: "https://github.com/vkaraujo/reactmovies",
+    liveLink: "https://reactmovies-iota.vercel.app/",
   },
   {
     title: "Digital Clock",
     description: "A minimalistic digital clock project with React and styled-components.",
-    link: "#",
-  },
-  {
-    title: "Placeholder Project 1",
-    description: "Description of the first placeholder project.",
-    link: "#",
-  },
-  {
-    title: "Placeholder Project 2",
-    description: "Description of the second placeholder project.",
-    link: "#",
-  },
-  {
-    title: "Placeholder Project 3",
-    description: "Description of the third placeholder project.",
-    link: "#",
+    repoLink: "https://github.com/vkaraujo/digital-clock",
+    liveLink: null, // No live link
   },
 ];
 
@@ -41,14 +29,49 @@ const Projects = () => {
 
   const ProjectCard = styled(Box)(({ theme }) => ({
     backgroundColor: theme.palette.grey[200],
-    padding: "30px", // Increased padding for a bigger card
-    borderRadius: "12px", // Adjusted border radius for a more modern look
+    padding: "30px",
+    borderRadius: "12px",
     textAlign: "center",
+    boxShadow: theme.shadows[3],
     transition: "transform 0.3s ease",
-    boxShadow: theme.shadows[3], // Added a subtle shadow
     "&:hover": {
-      transform: "scale(1.05)", // Slightly enlarge on hover
-      boxShadow: theme.shadows[6], // More prominent shadow on hover
+      transform: "scale(1.05)",
+      boxShadow: theme.shadows[6],
+    },
+  }));
+
+  const StyledIframe = styled("iframe")(() => ({
+    width: "100%",
+    height: "200px",
+    borderRadius: "8px",
+    border: "none",
+    marginBottom: "15px",
+  }));
+
+  const Placeholder = styled("div")(({ theme }) => ({
+    width: "100%",
+    height: "200px",
+    borderRadius: "8px",
+    backgroundColor: theme.palette.grey[300],
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    marginBottom: "15px",
+    fontSize: "14px",
+    color: theme.palette.text.secondary,
+  }));
+
+  const StyledLink = styled("a")(() => ({
+    display: "inline-block",
+    margin: "10px 5px",
+    textDecoration: "none",
+    color: "white",
+    backgroundColor: "#286ca7",
+    padding: "10px 20px",
+    borderRadius: "5px",
+    transition: "background-color 0.3s ease", // Smooth hover transition
+    "&:hover": {
+      backgroundColor: "#218838", // Darker shade for hover
     },
   }));
 
@@ -62,15 +85,36 @@ const Projects = () => {
           {projects.map((project, index) => (
             <Grid item xs={12} sm={6} md={4} key={index}>
               <ProjectCard>
+                {project.liveLink ? (
+                  <StyledIframe
+                    src={project.liveLink}
+                    title={`${project.title} preview`}
+                  />
+                ) : (
+                  <Placeholder>No Live Preview Available</Placeholder>
+                )}
                 <Typography variant="h5" gutterBottom>
                   {project.title}
                 </Typography>
                 <Typography variant="body2" paragraph>
                   {project.description}
                 </Typography>
-                <a href={project.link} target="_blank" rel="noopener noreferrer">
-                  View Project
-                </a>
+                <StyledLink
+                  href={project.repoLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                    >
+                  Repository
+                  </StyledLink>
+                {project.liveLink && (
+                  <StyledLink
+                  href={project.liveLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                    >
+                    Live Version
+                  </StyledLink>
+                )}
               </ProjectCard>
             </Grid>
           ))}
@@ -81,4 +125,3 @@ const Projects = () => {
 };
 
 export default Projects;
-

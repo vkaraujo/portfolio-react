@@ -38,7 +38,7 @@ const Skills = () => {
   const SkillBox = styled(Box)(({ color }: { color: string }) => ({
     backgroundColor: color,
     color: "#fff",
-    padding: "10px",
+    padding: "15px",
     borderRadius: "8px",
     textAlign: "center",
     display: "flex",
@@ -87,10 +87,11 @@ const Skills = () => {
         <Typography variant="h2" align="center" gutterBottom>
           Skills
         </Typography>
+        {/* Backend Section */}
         <SectionHeader>
           <Typography variant="h4">Backend Technologies</Typography>
         </SectionHeader>
-        <Grid container spacing={4} justifyContent="center">
+        <Grid container spacing={4} justifyContent="center" sx={{ marginBottom: "80px" }}>
           {skills.backend.map((skill, index) => (
             <Grid item xs={12} sm={6} md={4} key={index}>
               <SkillBox color={skill.color}>
@@ -100,10 +101,11 @@ const Skills = () => {
             </Grid>
           ))}
         </Grid>
+        {/* Frontend Section */}
         <SectionHeader>
           <Typography variant="h4">Frontend Technologies</Typography>
         </SectionHeader>
-        <Grid container spacing={4} justifyContent="center">
+        <Grid container spacing={4} justifyContent="center" sx={{ marginBottom: "80px" }}>
           {skills.frontend.map((skill, index) => (
             <Grid item xs={12} sm={6} md={4} key={index}>
               <SkillBox color={skill.color}>
@@ -119,3 +121,4 @@ const Skills = () => {
 };
 
 export default Skills;
+
