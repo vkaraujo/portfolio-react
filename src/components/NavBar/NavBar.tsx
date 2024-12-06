@@ -15,7 +15,7 @@ const NavBar = () => {
 
   return (
     <>
-      <AppBar position="absolute">
+      <AppBar position="absolute" role="navigation">
         <StyledToolbar>
           <MenuItem onClick={() => handleScroll("about")}>About</MenuItem>
           <MenuItem onClick={() => handleScroll("skills")}>Skills</MenuItem>

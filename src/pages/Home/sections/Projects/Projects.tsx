@@ -17,7 +17,7 @@ const projects = [
     title: "Digital Clock",
     description: "A minimalistic digital clock project with React and styled-components.",
     repoLink: "https://github.com/vkaraujo/digital-clock",
-    liveLink: null, // No live link
+    liveLink: null,
   },
 ];
 
@@ -69,9 +69,9 @@ const Projects = () => {
     backgroundColor: "#286ca7",
     padding: "10px 20px",
     borderRadius: "5px",
-    transition: "background-color 0.3s ease", // Smooth hover transition
+    transition: "background-color 0.3s ease",
     "&:hover": {
-      backgroundColor: "#218838", // Darker shade for hover
+      backgroundColor: "#218838",
     },
   }));
 

@@ -2,7 +2,7 @@ import { Box } from "@mui/material"
 
 export const AnimatedBackground = () => {
     return (
-        <Box>
+        <Box data-testid="animated-background">
             <svg
                 className="BgAnimation__svg"
                 viewBox="0 0 602 602"

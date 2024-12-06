@@ -10,7 +10,7 @@ const Footer = () => {
   }));
 
   return (
-    <StyledFooter>
+    <StyledFooter role="contentinfo">
       <Container maxWidth="lg">
         <Typography variant="body1">
           Developed by <strong>Viktor Araujo</strong>

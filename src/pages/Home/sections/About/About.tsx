@@ -11,9 +11,9 @@ const About = () => {
   }));
 
   return (
-    <StyledAbout id="about">
+    <StyledAbout id="about" aria-labelledby="about-heading">
       <Container maxWidth="lg">
-        <Typography variant="h2" align="center" gutterBottom>
+        <Typography id="about-heading" variant="h2" align="center" gutterBottom>
           About Me
         </Typography>
         <Typography variant="body1" align="center">

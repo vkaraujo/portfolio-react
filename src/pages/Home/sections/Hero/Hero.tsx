@@ -38,7 +38,7 @@ const Hero = () => {
                                     <AnimatedBackground />
                                 </Box>
                                 <Box position="relative" textAlign="center">
-                                    <StyledImg src={Avatar} />
+                                    <StyledImg src={Avatar} alt="Viktor Araujo's avatar" />
                                 </Box>
                             </Box>
                         </Grid>
